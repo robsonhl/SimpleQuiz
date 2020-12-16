@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"/>
+    <title>Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+<marquee>Quiz HTML</marquee>
+    <form>
+      <!-- Questão 1 -->
+        <h3>Como é chamado o arquivo responsável por estilzar paginas web</h3>
+      <input type="radio" id="pergunta1" name="pergunta1" value="10" onclick="addPontos(pergunta1)">Folhas de estilo em cascata</br>
+      <input type="radio" name="pergunta1" value="0" onclick="document.getElementById(pergunta1).disabled = true;"/>Tela de pintura</br>
+      <input type="radio" name="pergunta1" value="0" onClick="errou()" />Quadro negro</br>
+      <input type="radio" name="pergunta1" value="0" onClick="errou()" />Marcador de texturas</br>
+
+      <!-- Questão 2 -->
+      <h3>Qual é a extenção do arquivo responsável por estilzar paginas web</h3>
+      <input type="radio" name="pergunta2" value="0" onClick="errou()" />.tpp</br>
+      <input type="radio" name="pergunta2" value="0" onClick="errou()" />.qna</br>
+      <input type="radio" name="pergunta2" value="0" onClick="errou()" />.mct</br>
+      <input type="radio" name="pergunta2" value="10" onclick="addPontos(pergunta2)" />.css</br>
+
+      <!-- Questão 3 -->
+      <h3>Qual é o primeiro marcador que inicia o cabeçalho de uma pagina web</h3>
+      <input type="radio" name="pergunta3" value="0" onClick="errou()" />body</br>
+      <input type="radio" name="pergunta3" value="0" onClick="errou()" />title</br>
+      <input type="radio" name="pergunta3" value="10" onclick="addPontos(pergunta3)" />head</br>
+      <input type="radio" name="pergunta3" value="0" onClick="errou()" />html</br>
+
+      <!-- Questão 4 -->
+      <h3>Para que serve a tag &lt;b&gt;</h3>
+      <input type="radio" name="pergunta4" value="10" onclick="addPontos(pergunta4)" />Para deixar o texto em Negrito</br>
+      <input type="radio" name="pergunta4" value="0" onClick="errou()" />Para deixar o texto em Italico</br>
+      <input type="radio" name="pergunta4" value="0" onClick="errou()" />Para deixar o texto branco</br>
+      <input type="radio" name="pergunta4" value="0"" />Para deixar o texto com bordas</br>
+
+      <!-- Questão 5 -->
+      <h3>O que é preciso para rodar um site estático? (html)</h3>
+      <input type="radio" name="pergunta5" value="0" onClick="errou()" />Servnameor de ponta</br>
+      <input type="radio" name="pergunta5" value="0" onClick="errou()" />Servnameor Linux</br>
+      <input type="radio" name="pergunta5" value="0" onClick="errou()" />Windows server 2012</br>
+      <input type="radio" name="pergunta5" value="10" onclick="addPontos(pergunta5)" />Apenas o navegador</br>
+
+      <!-- Questão 6 -->
+      <h3>Para que serve a tag marquee?</h3>
+      <input type="radio" name="pergunta6" value="0" onClick="errou()" />Marcar o texto citado</br>
+      <input type="radio" name="pergunta6" value="0" onClick="errou()" />Realizar uma citação</br>
+      <input type="radio" name="pergunta6" value="0" onClick="errou()" />Grifar o texto</br>
+      <input type="radio" name="pergunta6" value="10" onclick="addPontos(pergunta6)" />Rolar o texto igual um letreiro digital</br>
+
+      <!-- Questão 7 -->
+      <h3>Qual é a função da linguagem PHP</h3>
+      <input type="radio" name="pergunta7" value="10" onclick="addPontos(pergunta7)" />Processar os dados no servidor e retornar ao cliente</br>
+      <input type="radio" name="pergunta7" value="0" onClick="errou()" />Realizar a verificação duas etapas</br>
+      <input type="radio" name="pergunta7" value="0" onClick="errou()" />Integrar front end ao backend</br>
+      <input type="radio" name="pergunta7" value="0" onClick="errou()" />Estilização de paineis</br>
+
+      <!-- Questão 8 -->
+      <h3>O que significa a sigla HTML?</h3>
+      <input type="radio" name="pergunta8" value="10" onclick="addPontos(pergunta8)" />Hypertext markup Language</br>
+      <input type="radio" name="pergunta8" value="0" onClick="errou()" />Hey This Matter Love</br>
+      <input type="radio" name="pergunta8" value="0" onClick="errou()" />Hall of The Master Language</br>
+      <input type="radio" name="pergunta8" value="0"" />Hanzo Thanos Matheus Language</br>
+      
+      <!-- Questão 9 -->
+      <h3>Qual linguagem interpretada no navegador para adicionar funcionalidades ao documento html</h3>
+      <input type="radio" name="pergunta9" value="0" onClick="errou()" />Tornado</br>
+      <input type="radio" name="pergunta9" value="0" onClick="errou()" />Cascada</br>
+      <input type="radio" name="pergunta9" value="0" onClick="errou()" />Rhyno</br>
+      <input type="radio" name="pergunta9" value="10" onclick="addPontos(pergunta9)" />Javascript</br>
+
+      <!-- Questão 10 -->
+      <h3>Qual é a marcação que inicia o corpo da pagina?</h3>
+      <input type="radio" name="pergunta10" value="0" onClick="errou()" />Title</br>
+      <input type="radio" name="pergunta10" value="0" onClick="errou()" />Body</br>
+      <input type="radio" name="pergunta10" value="10" onclick="addPontos(pergunta10)" />HTML</br>
+      <input type="radio" name="pergunta10" value="0" onClick="errou()" />Style</br>
+
+      <button onclick="finalizaTeste()">Enviar teste</button>
+    </form>
+
+    <script>
+        let resultado = 0;
+        function desabilita(pergunta){
+            pergunta = this.pergunta
+            pergunta.disabled = true
+        }
+        function addPontos(pergunta){
+            this.pergunta = pergunta
+            valorPergunta = pergunta.value
+            
+            resultado = resultado+10
+
+            alert("Acertou! Seus pontos: até o momento: " + resultado)
+            
+
+        }
+        
+        function finalizaTeste(){
+            alert("Teste Finalizado, seu resultado foi: " + resultado)
+        }
+
+        function errou(){
+            alert("Errooooooooooou")
+        }
+    </script>
+  </body>
+</html>
